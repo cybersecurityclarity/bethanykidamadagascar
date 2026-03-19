@@ -12,8 +12,7 @@
   const navHTML = `
 <nav class="site-nav">
   <a href="${root}index.html" class="nav-logo">
-    <!-- Replace src with actual BethanyKids logo once downloaded -->
-    <img src="${root}images/bk-logo-white.png" alt="BethanyKids Logo" onerror="this.style.display='none'">
+    <img src="${root}images/bk-logo-color.png" alt="BethanyKids Logo" onerror="this.style.display='none'">
     <div class="nav-logo-text">
       <span class="org-name">Bethany<em style="color:var(--gold);font-style:normal;">Kids</em></span>
       <span class="org-sub">Madagascar</span>
@@ -29,10 +28,11 @@
   </ul>
 
   <div class="lang-switcher">
-    <button data-lang="en" class="active">EN</button>
-    <button data-lang="fr">FR</button>
-    <button data-lang="mg">MG</button>
-    <button data-lang="zh">中</button>
+    <span class="lang-label">Language</span>
+    <button data-lang="en" class="active" title="English">🇬🇧</button>
+    <button data-lang="fr" title="Français">🇫🇷</button>
+    <button data-lang="mg" title="Malagasy">🇲🇬</button>
+    <button data-lang="zh" title="中文">🇨🇳</button>
   </div>
 
   <button class="nav-toggle" aria-label="Open menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
