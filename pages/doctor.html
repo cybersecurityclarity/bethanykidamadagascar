@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Heuric Rakotomalala — BethanyKids Madagascar</title>
+  <meta name="description" content="Meet Dr. Heuric Rakotomalala, one of Madagascar's leading pediatric and general surgeons, serving children across the island through BethanyKids Madagascar." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .bio-hero {
+      background: var(--navy);
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bio-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--gold) 100%);
+    }
+
+    .bio-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .bio-photo {
+      width: 240px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+      border: 4px solid rgba(255,255,255,0.15);
+      background: linear-gradient(135deg, #2a7d6f, #1a2e4a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .bio-header h1 {
+      color: var(--white);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .bio-header .title-badge {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .bio-header p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.05rem;
+      max-width: 580px;
+      margin-bottom: 1.5rem;
+    }
+
+    .bio-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .bio-tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin-top: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--teal) 0%, var(--gold) 100%);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 2rem 1.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -0.45rem;
+      top: 0.4rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--white);
+    }
+
+    .timeline-year {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .specialties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .specialty-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--off-white);
+      border-radius: var(--radius);
+    }
+
+    .specialty-item .icon { font-size: 1.4rem; flex-shrink: 0; }
+    .specialty-item span { font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 700px) {
+      .bio-hero-inner { grid-template-columns: 1fr; }
+      .bio-photo { width: 160px; height: 200px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<nav class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>›</span>
+  <a href="about.html">About</a>
+  <span>›</span>
+  <span>Dr. Heuric</span>
+</nav>
+
+<!-- BIO HERO -->
+<section class="bio-hero">
+  <div class="bio-hero-inner">
+    <!-- Replace this div with <img> once photo is available -->
+    <div class="bio-photo">[ Photo of<br>Dr. Heuric ]</div>
+    <div class="bio-header">
+      <span class="title-badge">General &amp; Pediatric Surgeon · Madagascar</span>
+      <h1>Dr. Heuric Rakotomalala</h1>
+      <p>Serving the children of Madagascar with world-class surgical skill, compassion, and faith — one operation at a time.</p>
+      <div class="bio-tags">
+        <span class="bio-tag">PAACS Graduate</span>
+        <span class="bio-tag">BethanyKids Fellow</span>
+        <span class="bio-tag">Medical Director — Manambaro Hospital</span>
+        <span class="bio-tag">SALFA Physician</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="fade-in">
+        <p class="section-label">His Story</p>
+        <h2 class="section-title">A Doctor Called to Serve</h2>
+        <p style="color:var(--gray);margin-bottom:1rem;">
+          Dr. Heuric Rakotomalala was born in Antsirabe, Madagascar and grew up mostly in Antananarivo. From the beginning, he felt called to serve his countrymen — a calling that would take him through years of advanced training before bringing him back to the people who needed him most.
+        </p>
+        <p style="color:var(--gray);margin-bottom:1rem;">
+          He trained first as a medical doctor in Madagascar, then pursued surgical training through <strong>PAACS</strong> (Pan African Academy of Christian Surgeons) at Banso Baptist Hospital in Cameroon from 2003, graduating in July 2007. He went on to complete a <strong>pediatric surgery fellowship at BethanyKids' Kijabe Hospital in Kenya</strong>, graduating in 2010.
+        </p>
+        <p style="color:var(--gray);">
+          After graduation, Dr. Rakotomalala worked one year at BethanyKids as a Junior Consultant Pediatric Surgeon. In March 2011, the Lord brought Heuric and his family back to Madagascar — appointed to work at Antanimalandy Lutheran Hospital in Mahajanga.
+        </p>
+      </div>
+      <div class="split-img fade-in">
+        <!-- Replace with real photo — e.g., Heuric at Manambaro with Dr. Roach -->
+        <div class="img-placeholder">[ Photo: Dr. Heuric with team at Manambaro ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="quote-block" style="max-width:720px;margin:0 auto;">
+      <blockquote>"I decide to come back to my home country because there is a terrible lack of pediatric surgeons in the country. There are only 5 pediatric surgeons for 22 million inhabitants."</blockquote>
+      <cite>— Dr. Heuric Rakotomalala, MD</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER TIMELINE -->
+<section class="section">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto;">
+      <p class="section-label">Career Journey</p>
+      <h2 class="section-title">From Madagascar to Africa — and Back</h2>
+      <div class="timeline fade-in">
+        <div class="timeline-item">
+          <div class="timeline-year">Early Career</div>
+          <div class="timeline-title">Medical Doctor, Madagascar</div>
+          <div class="timeline-desc">Completed initial medical training in Madagascar before pursuing advanced surgical specialization.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2003 – 2007</div>
+          <div class="timeline-title">PAACS Surgical Residency — Banso Baptist Hospital, Cameroon</div>
+          <div class="timeline-desc">Trained in general surgery through the Pan African Academy of Christian Surgeons. Graduated July 2007.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2007 – 2010</div>
+          <div class="timeline-title">Pediatric Surgery Fellowship — BethanyKids, Kijabe Hospital, Kenya</div>
+          <div class="timeline-desc">Completed specialized pediatric surgery training. Graduated 2010. Served briefly as Junior Consultant Pediatric Surgeon at BethanyKids.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2011</div>
+          <div class="timeline-title">Return to Madagascar — Antanimalandy Lutheran Hospital, Mahajanga</div>
+          <div class="timeline-desc">Returned home with family. Appointed to Antanimalandy Lutheran Hospital. Also became Chief Medical Officer while training young physicians.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2015 – Present</div>
+          <div class="timeline-title">Medical Director — Manambaro Lutheran Hospital, Southeastern Madagascar</div>
+          <div class="timeline-desc">Serving the southeastern region where need for surgeons is "huge." The hospital serves nearly 3 million people with Dr. Rakotomalala as the only certified general and pediatric surgeon. Hosted international medical exchanges with University of Western Michigan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="section-label">Clinical Expertise</p>
+    <h2 class="section-title">Surgical Specialties</h2>
+    <p style="color:var(--gray);max-width:600px;margin-bottom:0.5rem;">
+      Dr. Heuric performs a wide range of procedures that were previously unavailable in southeastern Madagascar, eliminating the need for families to travel 1,400 km to Antananarivo.
+    </p>
+    <div class="specialties-grid fade-in">
+      <div class="specialty-item">
+        <span class="icon">👶</span>
+        <span>Cleft Lip &amp; Palate Repair</span>
+      </div>
+      <div class="specialty-item">
+        <span class="icon">🧠</span>
+        <span>VP Shunt Placement</span>
+      </div>
+      <div class="specialty-item">
+        <span class="icon">🦶</span>
+        <span>Clubfoot Correction</span>
+      </div>
+      <div class="specialty-item">
+        <span class="icon">🩺</span>
+        <span>Spina Bifida Correction</span>
+      </div>
+      <div class="specialty-item">
+        <span class="icon">🔬</span>
+        <span>General Pediatric Surgery</span>
+      </div>
+      <div class="specialty-item">
+        <span class="icon">🏥</span>
+        <span>General &amp; Emergency Surgery</span>
+      </div>
+      <div class="specialty-item">
+        <span class="icon">📋</span>
+        <span>Surgical Outreach &amp; Training</span>
+      </div>
+      <div class="specialty-item">
+        <span class="icon">🌍</span>
+        <span>Tropical Medicine Consultation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT AT MANAMBARO -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="split-img fade-in">
+        <div class="img-placeholder">[ Photo: Heuric in green scrubs at Manambaro with Dr. Roach, students &amp; SALFA health leaders ]</div>
+      </div>
+      <div class="fade-in">
+        <p class="section-label">Impact at Manambaro</p>
+        <h2 class="section-title">Transforming a Region</h2>
+        <p style="color:var(--gray);margin-bottom:1rem;">
+          Since Dr. Rakotomalala began serving at Manambaro Lutheran Hospital in February 2015, the impact on the surrounding region has been immense. Patients no longer need to travel 1,400 km to Antananarivo for pediatric surgical procedures.
+        </p>
+        <p style="color:var(--gray);margin-bottom:1rem;">
+          Many surrounding hospitals now refer their surgical patients to Dr. Rakotomalala — who sometimes travels over 500 kilometres to reach them. The hospital serves nearly 3 million people.
+        </p>
+        <p style="color:var(--gray);margin-bottom:1.5rem;">
+          In addition to his surgical work, Dr. Heuric hosted Professor Dr. Richard Roach from the University of Western Michigan and multiple groups of students for medical exchanges — Malagasy doctors teaching tropical medicine, visiting physicians sharing updates on diabetes, hypertension and stroke treatments.
+        </p>
+        <div class="quote-block">
+          <blockquote>"Patients no longer have to travel the long distance from southwest Cameroon to the PAACS training centre for surgical procedures that can now be done in Mutengene."</blockquote>
+          <cite>— Parallel story: Dr. Gerald Ekwen, PAACS Alumni Newsletter</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="section-label">Gallery</p>
+    <h2 class="section-title">Dr. Heuric in the Field</h2>
+    <p style="color:var(--gray);margin-bottom:0.5rem;">
+      Add photos from Dr. Heuric's surgical work and outreach missions below.
+    </p>
+    <div class="gallery-grid fade-in">
+      <div class="gallery-item">[ Photo 1 ]</div>
+      <div class="gallery-item">[ Photo 2 ]</div>
+      <div class="gallery-item">[ Photo 3 ]</div>
+      <div class="gallery-item">[ Photo 4 ]</div>
+      <div class="gallery-item">[ Photo 5 ]</div>
+      <div class="gallery-item">[ Photo 6 ]</div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL -->
+<section class="section section-navy">
+  <div class="container" style="max-width:760px;">
+    <p class="section-label">Faith &amp; Family</p>
+    <h2 class="section-title" style="color:var(--white);">The Whole Person</h2>
+    <p style="color:rgba(255,255,255,0.8);margin-bottom:1rem;">
+      Dr. Heuric and his wife, Mireille — who is also an internist — have three grown children (Ihoby, Andry and Mirenty), each pursuing their education in the United States.
+    </p>
+    <p style="color:rgba(255,255,255,0.8);margin-bottom:1rem;">
+      His daily routine begins with hospital devotions followed by surgical rounds and scheduled procedures. He reflects that PAACS prepared him not just surgically, but spiritually: <em style="color:var(--gold);">"PAACS helped me to live a daily life honoring God — performing high quality surgery, handling difficult situations with learned skills, and having the Great Healer beside me."</em>
+    </p>
+    <p style="color:rgba(255,255,255,0.8);">
+      "God is truly our Provider since the beginning," he states. Dr. Heuric is committed to training future surgeons at Manambaro Lutheran Hospital and across Madagascar through PAACS.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section text-center">
+  <div class="container">
+    <p class="section-label">Support His Work</p>
+    <h2 class="section-title">Help Dr. Heuric Reach More Children</h2>
+    <p style="color:var(--gray);max-width:520px;margin:0 auto 2rem;">
+      Your donation funds the travel, surgical supplies, and care that make each outreach mission possible.
+    </p>
+    <a href="donate.html"  class="btn btn-primary">Donate Today</a>
+    <a href="contact.html" class="btn btn-teal" style="margin-left:0.75rem;">Book an Appointment</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>window.BKM_PAGE = 'doctor'; window.BKM_ROOT = '../';</script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

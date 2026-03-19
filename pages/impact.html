@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madagascar Impact — BethanyKids Madagascar</title>
+  <meta name="description" content="See the real impact of pediatric surgical care in Madagascar through BethanyKids Madagascar and Dr. Heuric Rakotomalala." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .impact-hero-strip {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+      color: var(--white);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact-hero-strip::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--teal-lt));
+    }
+
+    .impact-hero-strip h1 { color: var(--white); margin-bottom: 1rem; }
+    .impact-hero-strip p  { color: rgba(255,255,255,0.82); max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+
+    .big-issue {
+      background: var(--off-white);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .big-issue .number {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 10vw, 7rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .big-issue .number span { color: var(--gold); }
+
+    .story-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .story-card-inner {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+    }
+
+    .story-card-img {
+      height: 100%;
+      min-height: 260px;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .story-card-body { padding: 2rem; }
+    .story-card-body .badge { margin-bottom: 0.75rem; }
+    .story-card-body h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 0.75rem; }
+    .story-card-body p  { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
+
+    .hospital-map-note {
+      background: var(--navy);
+      color: var(--white);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: var(--radius);
+      margin: 2rem 0;
+    }
+
+    .hospital-map-note h3 { color: var(--white); margin-bottom: 0.5rem; }
+    .hospital-map-note p  { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+    .condition-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .condition-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.92rem;
+    }
+
+    .condition-item .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 680px) {
+      .story-card-inner { grid-template-columns: 1fr; }
+      .story-card-img { min-height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<nav class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>›</span>
+  <span>Impact</span>
+</nav>
+
+<!-- HERO -->
+<section class="impact-hero-strip">
+  <h1>Our Impact in Madagascar</h1>
+  <p>Every statistic represents a child — a life restored, a family given hope, a future made possible.</p>
+</section>
+
+<!-- THE SCALE OF NEED -->
+<section class="big-issue">
+  <div class="container">
+    <p class="section-label">The Scale of Need</p>
+    <div class="number"><span>5</span></div>
+    <p style="font-size:1.2rem;color:var(--navy);font-weight:700;margin:0.5rem 0 0.25rem;">Pediatric surgeons</p>
+    <p style="color:var(--gray);font-size:1rem;">for <strong>22 million</strong> people in Madagascar</p>
+    <hr class="divider" style="max-width:400px;margin:1.5rem auto;">
+    <p style="color:var(--gray);max-width:600px;margin:0 auto;font-size:0.95rem;">
+      Children born with congenital conditions — cleft lips, spina bifida, clubfoot, hernias, hydrocephalus — face a death rate approximately <strong>100× higher</strong> in Sub-Saharan Africa than in North America. Lack of access to a surgeon is the primary reason.
+    </p>
+  </div>
+</section>
+
+<!-- KEY STATS -->
+<section class="section">
+  <div class="container">
+    <p class="section-label text-center">By the Numbers</p>
+    <h2 class="section-title text-center">Dr. Heuric's Impact</h2>
+    <div class="stats-grid fade-in">
+      <div class="stat-card">
+        <div class="stat-number">[PLACEHOLDER]</div>
+        <div class="stat-label">Surgeries Performed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3M+</div>
+        <div class="stat-label">People in Manambaro's Catchment Area</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">1,400<span style="font-size:1.4rem;">km</span></div>
+        <div class="stat-label">Distance Patients Used to Travel for Surgery</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">500<span style="font-size:1.4rem;">km</span></div>
+        <div class="stat-label">Distance Dr. Heuric Sometimes Travels to Reach Patients</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">[PLACEHOLDER]</div>
+        <div class="stat-label">Hospitals Now Referring Patients to Dr. Heuric</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Years of Medical Service</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.8rem;color:var(--gray);">
+      * Exact statistics to be provided by Dr. Heuric's team. Placeholders are shown above.
+    </p>
+  </div>
+</section>
+
+<!-- CONDITIONS WE TREAT -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="section-label">What We Treat</p>
+    <h2 class="section-title">Conditions That No Longer Require a 1,400 km Journey</h2>
+    <p style="color:var(--gray);max-width:620px;margin-bottom:0.5rem;">
+      Before Dr. Heuric's presence in southeastern Madagascar, patients had to travel to Antananarivo for these procedures. Today, they can be done locally.
+    </p>
+    <div class="condition-list fade-in">
+      <div class="condition-item"><span class="dot"></span> Cleft Lip &amp; Palate Repair</div>
+      <div class="condition-item"><span class="dot"></span> VP Shunt Placement (Hydrocephalus)</div>
+      <div class="condition-item"><span class="dot"></span> Spina Bifida Correction</div>
+      <div class="condition-item"><span class="dot"></span> Clubfoot Correction</div>
+      <div class="condition-item"><span class="dot"></span> Hernia Repair</div>
+      <div class="condition-item"><span class="dot"></span> General Pediatric Surgery</div>
+      <div class="condition-item"><span class="dot"></span> Emergency General Surgery</div>
+      <div class="condition-item"><span class="dot"></span> Congenital Anomaly Correction</div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT STORIES -->
+<section class="section">
+  <div class="container">
+    <p class="section-label">Impact Stories</p>
+    <h2 class="section-title">Lives Transformed</h2>
+    <p style="color:var(--gray);margin-bottom:2rem;max-width:600px;">
+      The following are examples of the kind of impact BethanyKids Madagascar has — to be populated with real patient stories (with permission) from Dr. Heuric's team.
+    </p>
+
+    <!-- Story placeholder 1 -->
+    <div class="story-card fade-in">
+      <div class="story-card-inner">
+        <div class="story-card-img">[ Patient Photo Placeholder ]</div>
+        <div class="story-card-body">
+          <span class="badge badge-teal">Patient Story</span>
+          <h3>[Child's Name] — Cleft Lip Repair</h3>
+          <p>
+            [PLACEHOLDER] — Add a real patient story here, with family permission. Describe where the child is from, what condition they had, what the family faced before finding Dr. Heuric, and what life looks like now after surgery.
+          </p>
+          <p style="margin-top:0.75rem;font-style:italic;color:var(--teal);">"[Quote from parent or child — placeholder]"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story placeholder 2 -->
+    <div class="story-card fade-in">
+      <div class="story-card-inner">
+        <div class="story-card-img">[ Patient Photo Placeholder ]</div>
+        <div class="story-card-body">
+          <span class="badge badge-gold">Patient Story</span>
+          <h3>[Child's Name] — VP Shunt / Hydrocephalus</h3>
+          <p>
+            [PLACEHOLDER] — Add a real patient story here. Describe the surgical condition, the family's situation, how they accessed Dr. Heuric's care, and the outcome.
+          </p>
+          <p style="margin-top:0.75rem;font-style:italic;color:var(--teal);">"[Quote from parent or child — placeholder]"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story placeholder 3 -->
+    <div class="story-card fade-in">
+      <div class="story-card-inner">
+        <div class="story-card-img">[ Patient Photo Placeholder ]</div>
+        <div class="story-card-body">
+          <span class="badge badge-navy">Patient Story</span>
+          <h3>[Child's Name] — General Pediatric Surgery</h3>
+          <p>
+            [PLACEHOLDER] — Add a real patient story here. Stories of children from remote communities who would have otherwise had no access to surgical care are especially powerful for donors.
+          </p>
+          <p style="margin-top:0.75rem;font-style:italic;color:var(--teal);">"[Quote from parent or child — placeholder]"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP / REACH -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="section-label">Geographic Reach</p>
+    <h2 class="section-title">Where We Work</h2>
+    <p style="color:var(--gray);max-width:600px;margin-bottom:1.5rem;">
+      Dr. Heuric is based at Manambaro Lutheran Hospital in southeastern Madagascar, but regularly travels to hospitals across the island. The map below will show active partner hospitals.
+    </p>
+
+    <div class="hospital-map-note">
+      <h3>🗺 Interactive Map — Coming Soon</h3>
+      <p>An interactive map of partner hospitals and surgical outreach locations will be displayed here.<br>
+      To add your hospital as a partner, please <a href="contact.html" style="color:var(--gold);">contact us</a>.</p>
+    </div>
+
+    <div class="cards-grid fade-in">
+      <div class="card">
+        <div class="card-img-placeholder">[ Photo: Manambaro Hospital ]</div>
+        <div class="card-body">
+          <h3>Manambaro Lutheran Hospital</h3>
+          <p>Dr. Heuric's base hospital, serving nearly 3 million people in southeastern Madagascar. The region's only certified general and pediatric surgeon is stationed here.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder">[ Photo: Outreach Hospital ]</div>
+        <div class="card-body">
+          <h3>[Partner Hospital — Placeholder]</h3>
+          <p>Add real partner hospitals here as they come on board. Include city/region and number of cases typically gathered per outreach visit.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-placeholder">[ Your Hospital Here ]</div>
+        <div class="card-body">
+          <h3>Your Hospital Could Be Here</h3>
+          <p>Is your hospital willing to gather pediatric surgical cases for Dr. Heuric to operate? <a href="contact.html">Contact us to partner →</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDICAL EXCHANGE -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="split">
+      <div>
+        <p class="section-label">Knowledge Exchange</p>
+        <h2 class="section-title" style="color:var(--white);">Teaching &amp; Learning Together</h2>
+        <p style="color:rgba(255,255,255,0.8);margin-bottom:1rem;">
+          BethanyKids Madagascar believes that the exchange of knowledge goes both ways. As Medical Director at Manambaro Hospital, Dr. Heuric has hosted Professor Dr. Richard Roach from the University of Western Michigan, along with multiple groups of medical residents and students.
+        </p>
+        <p style="color:rgba(255,255,255,0.8);margin-bottom:1rem;">
+          In these exchanges, Malagasy doctors teach visiting students about tropical medicine, while visiting physicians provide updates on the latest treatments for conditions like diabetes, hypertension, and strokes.
+        </p>
+        <p style="color:rgba(255,255,255,0.8);">
+          These partnerships strengthen both sides — advancing Malagasy medical knowledge while giving international students hands-on experience in global health contexts.
+        </p>
+      </div>
+      <div class="fade-in">
+        <div class="img-placeholder">[ Photo: Dr. Heuric with Dr. Roach, residents &amp; SALFA health leaders at Manambaro ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section text-center">
+  <div class="container">
+    <p class="section-label">Join Us</p>
+    <h2 class="section-title">Be Part of the Impact</h2>
+    <p style="color:var(--gray);max-width:520px;margin:0 auto 2rem;">
+      Whether you donate, partner as a hospital, or send your medical students for an exchange — you can be part of transforming pediatric surgical care in Madagascar.
+    </p>
+    <a href="donate.html"  class="btn btn-primary">Donate Today</a>
+    <a href="contact.html" class="btn btn-teal" style="margin-left:0.75rem;">Partner With Us</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>window.BKM_PAGE = 'impact'; window.BKM_ROOT = '../';</script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

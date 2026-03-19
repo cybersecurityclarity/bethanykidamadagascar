@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — BethanyKids Madagascar</title>
+  <meta name="description" content="Learn about BethanyKids Madagascar's mission to bring pediatric surgical care to children across Madagascar." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .value-card {
+      padding: 2rem 1.5rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-top: 3px solid var(--teal);
+    }
+
+    .value-card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .value-card h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .value-card p  { font-size: 0.9rem; color: var(--gray); }
+
+    .partner-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+      opacity: 0.7;
+    }
+
+    .partner-logos span {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<nav class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>›</span>
+  <span>About</span>
+</nav>
+
+<section class="page-hero">
+  <h1>About BethanyKids Madagascar</h1>
+  <p>A sister initiative of BethanyKids — bringing life-saving pediatric surgery to the children of Madagascar.</p>
+</section>
+
+<!-- MISSION -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="fade-in">
+        <p class="section-label">Our Mission</p>
+        <h2 class="section-title">Surgery Where It's Needed Most</h2>
+        <p style="color:var(--gray);margin-bottom:1rem;">
+          BethanyKids Madagascar exists to close the devastating gap in pediatric surgical care in Madagascar. With only 5 pediatric surgeons for 22 million people, thousands of children are born with treatable conditions — cleft lips, spina bifida, clubfoot, hernias, and more — that go untreated for lack of access.
+        </p>
+        <p style="color:var(--gray);margin-bottom:1rem;">
+          We believe every child deserves a chance at life, regardless of where they are born or how much their family earns. Our model is simple: send the surgeon to the patient, not the other way around.
+        </p>
+        <p style="color:var(--gray);">
+          Through partnerships with hospitals across Madagascar, we coordinate surgical outreach visits, fund operations for children who cannot pay, and build local surgical capacity for the future.
+        </p>
+      </div>
+      <div class="split-img fade-in">
+        <!-- Replace with actual photo of team or hospital -->
+        <div class="img-placeholder">[ Photo: Dr. Heuric and Team at Manambaro ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="section-label text-center">The Problem</p>
+    <h2 class="section-title text-center">A Crisis Hidden in Plain Sight</h2>
+    <p class="section-intro text-center" style="margin:0 auto 3rem;">Madagascar faces one of the most severe shortages of surgical care for children on the African continent.</p>
+
+    <div class="stats-grid fade-in">
+      <div class="stat-card">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Pediatric Surgeons for 22M People</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">1,400<span style="font-size:1.5rem;">km</span></div>
+        <div class="stat-label">Distance Patients Once Traveled for Surgery</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100×</div>
+        <div class="stat-label">Higher Child Mortality for Surgical Conditions vs. North America</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3M+</div>
+        <div class="stat-label">People Served by Manambaro Hospital Region</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR RESPONSE -->
+<section class="section">
+  <div class="container">
+    <p class="section-label">Our Response</p>
+    <h2 class="section-title">What We Do</h2>
+    <div class="values-grid fade-in">
+      <div class="value-card">
+        <div class="icon">🔪</div>
+        <h3>Pediatric Surgery Outreach</h3>
+        <p>Dr. Heuric travels to partner hospitals across Madagascar, performing life-changing surgeries for children who cannot reach the capital.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">💰</div>
+        <h3>Sponsored Surgeries</h3>
+        <p>Donor support covers surgical costs for families who cannot afford to pay, ensuring no child is turned away for financial reasons.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🏥</div>
+        <h3>Hospital Partnerships</h3>
+        <p>We partner with hospitals willing to gather and prepare surgical cases, amplifying Dr. Heuric's reach across the island nation.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">📚</div>
+        <h3>Training Future Surgeons</h3>
+        <p>Dr. Heuric mentors young Malagasy doctors, building local capacity that will outlast any individual surgeon's career.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🌍</div>
+        <h3>Medical Exchange</h3>
+        <p>We facilitate exchanges between international medical professionals and Malagasy doctors, enriching both sides with knowledge.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🙏</div>
+        <h3>Faith-Centred Care</h3>
+        <p>Rooted in Christian values of compassion and service, we bring both medical excellence and spiritual care to every patient.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATIONSHIP TO BETHANYKIDS -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="split">
+      <div>
+        <p class="section-label">Our Family</p>
+        <h2 class="section-title" style="color:var(--white);">Part of the BethanyKids Network</h2>
+        <p style="color:rgba(255,255,255,0.8);margin-bottom:1rem;">
+          BethanyKids Madagascar is a sister initiative of <strong style="color:var(--gold);">BethanyKids</strong>, one of Africa's leading organizations for training pediatric surgical teams. Since 2004, BethanyKids has provided life-transforming surgeries to over 60,000 children across Africa.
+        </p>
+        <p style="color:rgba(255,255,255,0.8);margin-bottom:1rem;">
+          Dr. Heuric completed his pediatric surgery fellowship at BethanyKids' training site at Kijabe Hospital in Kenya, graduating in 2010. He returned to Madagascar committed to replicating that model of excellence and compassion in his home country.
+        </p>
+        <p style="color:rgba(255,255,255,0.8);">
+          BethanyKids Madagascar shares BethanyKids' mission, values, and commitment to Jesus-centred healthcare — and directs donations to support Dr. Heuric's outreach work on the ground.
+        </p>
+        <a href="https://bethanykids.org" target="_blank" rel="noopener" class="btn btn-gold mt-2" style="background:var(--gold);color:var(--navy);margin-top:1.5rem;display:inline-block;padding:0.75rem 1.8rem;border-radius:4px;font-weight:700;font-size:0.88rem;letter-spacing:0.06em;text-transform:uppercase;">
+          Visit BethanyKids.org →
+        </a>
+      </div>
+      <div class="fade-in">
+        <div class="img-placeholder">[ BethanyKids Network Map / Logo ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="section section-alt">
+  <div class="container text-center">
+    <p class="section-label">Our Partners</p>
+    <h2 class="section-title">Working Together</h2>
+    <p style="color:var(--gray);max-width:560px;margin:0 auto 2rem;">
+      BethanyKids Madagascar works alongside leading medical and faith-based organizations committed to surgical care in Africa.
+    </p>
+    <div class="partner-logos">
+      <span>BethanyKids</span>
+      <span>PAACS</span>
+      <span>SALFA</span>
+      <span>Manambaro Lutheran Hospital</span>
+      <span>[ Add Partners ]</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-teal text-center">
+  <div class="container">
+    <h2 style="color:var(--white);margin-bottom:1rem;">Ready to Make a Difference?</h2>
+    <p style="color:rgba(255,255,255,0.85);max-width:520px;margin:0 auto 2rem;">
+      Whether you donate, volunteer, or partner with us as a hospital — your involvement saves children's lives.
+    </p>
+    <a href="donate.html"  class="btn btn-primary">Donate Today</a>
+    <a href="contact.html" class="btn btn-outline" style="margin-left:0.75rem;">Get in Touch</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>window.BKM_PAGE = 'about'; window.BKM_ROOT = '../';</script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

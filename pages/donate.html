@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate — BethanyKids Madagascar</title>
+  <meta name="description" content="Fund life-saving pediatric surgeries for children in Madagascar. Your donation transforms lives." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .donate-hero {
+      background: var(--navy);
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .donate-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(42,125,111,0.3) 0%, transparent 70%);
+    }
+
+    .donate-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+    }
+
+    .donate-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .donate-hero h1 em { color: var(--gold); font-style: normal; display: block; }
+
+    .donate-hero p {
+      color: rgba(255,255,255,0.82);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+    }
+
+    .give-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .give-btn {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: all 0.25s;
+      text-decoration: none;
+    }
+
+    .give-btn:hover { background: #e0a84a; color: var(--navy); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(200,150,62,0.35); }
+
+    .give-btn.secondary {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.5);
+      color: var(--white);
+    }
+
+    .give-btn.secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.08); color: var(--white); }
+
+    .impact-tiers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+
+    .tier-card {
+      border-radius: var(--radius);
+      border: 2px solid var(--gray-lt);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.25s;
+      background: var(--white);
+      position: relative;
+    }
+
+    .tier-card.featured {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(200,150,62,0.12);
+    }
+
+    .tier-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -1px; left: 50%; transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.75rem;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .tier-card:hover { border-color: var(--teal); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(42,125,111,0.12); }
+
+    .tier-amount {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .tier-period { font-size: 0.82rem; color: var(--gray); margin-bottom: 0.75rem; }
+
+    .tier-impact {
+      font-size: 0.88rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+      min-height: 48px;
+      line-height: 1.5;
+    }
+
+    .tier-link {
+      display: block;
+      padding: 0.6rem 1.25rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s;
+    }
+
+    .tier-link:hover { background: var(--teal-lt); color: var(--white); }
+    .tier-card.featured .tier-link { background: var(--gold); color: var(--navy); }
+    .tier-card.featured .tier-link:hover { background: #e0a84a; color: var(--navy); }
+
+    .testimonial-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .testimonial-card blockquote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card cite {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-style: normal;
+    }
+
+    .other-giving {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .giving-option {
+      padding: 1.75rem;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--gray-lt);
+      background: var(--white);
+    }
+
+    .giving-option h3 { font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .giving-option p  { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+    .giving-option a  { color: var(--teal); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<nav class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>›</span>
+  <span>Donate</span>
+</nav>
+
+<!-- DONATE HERO -->
+<section class="donate-hero">
+  <h1>Help <em>Change the World</em></h1>
+  <p>There is really no other way to say it: <strong>we need your help.</strong> Every donation funds a surgery that transforms a child's life — and often saves it.</p>
+  <div class="give-buttons">
+    <a href="https://bethanykids.org/donate_us" target="_blank" rel="noopener" class="give-btn">Give — US &amp; International</a>
+    <a href="https://bethanykids.org/donate_ca" target="_blank" rel="noopener" class="give-btn secondary">Give — Canada</a>
+    <a href="https://www.give.net/BethanyKids/oneoff"  target="_blank" rel="noopener" class="give-btn secondary">Give — United Kingdom</a>
+  </div>
+  <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);position:relative;">
+    Donations are processed securely through BethanyKids, our parent organization.<br>
+    Please note "Madagascar" in the gift designation field so funds support Dr. Heuric's work.
+  </p>
+</section>
+
+<!-- WHY DONATE -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="fade-in">
+        <p class="section-label">The Why</p>
+        <h2 class="section-title">Why Your Gift Matters</h2>
+        <p style="color:var(--gray);margin-bottom:1rem;">
+          Children in Madagascar are born with surgical conditions — cleft lips, spina bifida, clubfoot, hernias — that are routinely corrected in the developed world. In Madagascar, without intervention, these children face lives of pain, disability, social exclusion, and often death.
+        </p>
+        <p style="color:var(--gray);margin-bottom:1rem;">
+          Dr. Heuric travels across the country to bring surgery directly to these children. But every trip, every operation, requires resources — travel costs, surgical supplies, medications, follow-up care.
+        </p>
+        <p style="color:var(--gray);margin-bottom:1.5rem;">
+          Your donation makes each surgery possible. It is that direct, and that meaningful.
+        </p>
+        <div class="quote-block">
+          <blockquote>"Every donor gives for different reasons, and one thing always seems true: it's not just the child getting surgery whose life is transformed."</blockquote>
+          <cite>— BethanyKids</cite>
+        </div>
+      </div>
+      <div class="split-img fade-in">
+        <div class="img-placeholder">[ Photo: Child after surgery / recovery ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT TIERS -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="section-label text-center">Your Impact</p>
+    <h2 class="section-title text-center">What Your Gift Provides</h2>
+    <p class="section-intro text-center" style="margin:0 auto 2rem;">
+      Every amount makes a difference. Below are examples of what your donation can accomplish. 
+      <em style="color:var(--gray);font-size:0.88rem;">(Exact costs are placeholders — update with Dr. Heuric's actual figures.)</em>
+    </p>
+    <div class="impact-tiers fade-in">
+      <div class="tier-card">
+        <div class="tier-amount">$25</div>
+        <div class="tier-period">One-time gift</div>
+        <div class="tier-impact">Covers surgical supplies for one child's procedure.</div>
+        <a href="https://bethanykids.org/donate_us" target="_blank" rel="noopener" class="tier-link">Give $25</a>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-amount">$100</div>
+        <div class="tier-period">One-time gift</div>
+        <div class="tier-impact">Helps fund a cleft lip repair or clubfoot correction for one child.</div>
+        <a href="https://bethanykids.org/donate_us" target="_blank" rel="noopener" class="tier-link">Give $100</a>
+      </div>
+      <div class="tier-card">
+        <div class="tier-amount">$250</div>
+        <div class="tier-period">One-time gift</div>
+        <div class="tier-impact">Sponsors a full surgical outreach trip to a remote hospital community.</div>
+        <a href="https://bethanykids.org/donate_us" target="_blank" rel="noopener" class="tier-link">Give $250</a>
+      </div>
+      <div class="tier-card">
+        <div class="tier-amount">$50</div>
+        <div class="tier-period">Per month</div>
+        <div class="tier-impact">As a monthly donor, you sustain ongoing surgical outreach across Madagascar.</div>
+        <a href="https://bethanykids.org/donate_us" target="_blank" rel="noopener" class="tier-link">Give Monthly</a>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.82rem;color:var(--gray);margin-top:1rem;">
+      To designate your gift specifically for BethanyKids Madagascar / Dr. Heuric's work, 
+      please note <strong>"Madagascar"</strong> in the designation field when donating.
+    </p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-navy">
+  <div class="container">
+    <p class="section-label">Donor Stories</p>
+    <h2 class="section-title" style="color:var(--white);">Why People Give</h2>
+    <div class="testimonial-row fade-in">
+      <div class="testimonial-card">
+        <blockquote>"BethanyKids helps restore dignity and a sense of identity to those with health conditions that otherwise cause isolation and shame; supporting their work is a very practical way to be the transformative hands and feet of Jesus."</blockquote>
+        <cite>— Dr. Tiffany Nazareth, Optometrist</cite>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"As a teacher, I invest time and energy into helping children learn and grow. BethanyKids is also in the field of helping children reach their fullest potential, and that's why I love being a monthly donor."</blockquote>
+        <cite>— Mary Biemann, Teacher</cite>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"I support BethanyKids because I have experienced for myself the healing and transformational power of this medical ministry. Supporting their work is a practical expression of gratitude."</blockquote>
+        <cite>— Dr. Sherif Emil, Professor of Surgery &amp; Pediatrics</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER GIVING OPTIONS -->
+<section class="section">
+  <div class="container">
+    <p class="section-label">Other Ways to Give</p>
+    <h2 class="section-title">Additional Giving Options</h2>
+    <div class="other-giving fade-in">
+      <div class="giving-option">
+        <h3>🇺🇸 United States — Mail</h3>
+        <p>Donations may be mailed to:<br>
+          <strong>BethanyKids</strong><br>
+          PO Box 1297<br>
+          Abingdon, VA 24212-1297
+        </p>
+      </div>
+      <div class="giving-option">
+        <h3>🇨🇦 Canada</h3>
+        <p>
+          <strong>BethanyKids</strong><br>
+          PO Box 1202, Kingston, ON K7L 4Y8<br><br>
+          Or send Interac E-Transfers to:<br>
+          <a href="mailto:donate@bethanykids.org">donate@bethanykids.org</a><br><br>
+          <em>CRA Charitable Number: 821272747RR0001</em>
+        </p>
+      </div>
+      <div class="giving-option">
+        <h3>🇬🇧 United Kingdom</h3>
+        <p>
+          <strong>BethanyKids UK</strong><br>
+          125 Hogg Lane, Chafford Hundred<br>
+          Grays, Essex, RM16 6QP<br><br>
+          Gift Aid available via <a href="https://my.give.net/account/create" target="_blank" rel="noopener">Stewardship Giving Account</a>.<br><br>
+          <em>Charity No: 1142512 | Company No: 7516131</em>
+        </p>
+      </div>
+      <div class="giving-option">
+        <h3>💻 Cryptocurrency</h3>
+        <p>US, Canadian, and UK donors can donate cryptocurrency and receive appropriate tax benefits.<br><br>
+          <a href="https://bethanykids.org/crypto" target="_blank" rel="noopener">Learn more about crypto giving →</a>
+        </p>
+      </div>
+      <div class="giving-option">
+        <h3>⛪ Church Partnership</h3>
+        <p>Connect your church with BethanyKids Madagascar for mission partnerships, awareness campaigns, and coordinated giving.<br><br>
+          <a href="contact.html">Contact us to discuss →</a>
+        </p>
+      </div>
+      <div class="giving-option">
+        <h3>📅 Legacy Giving</h3>
+        <p>Consider including BethanyKids Madagascar in your estate planning to leave a lasting legacy for children in Madagascar.<br><br>
+          <a href="https://bethanykids.org/index.php/legacy" target="_blank" rel="noopener">Learn about legacy giving →</a>
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;padding:1.5rem;background:var(--off-white);border-radius:var(--radius);font-size:0.88rem;color:var(--gray);">
+      <strong>Designation Notice:</strong> The spending of funds by BethanyKids is confined to programs and projects approved by BethanyKids. Each restricted donation designated toward an approved program will be used as designated, with the understanding that when the need for such a program has been met, or cannot reasonably be completed, the remaining restricted contributions will be used where most appropriate.
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section section-teal text-center">
+  <div class="container">
+    <h2 style="color:var(--white);margin-bottom:1rem;">Ready to Change a Child's Life?</h2>
+    <p style="color:rgba(255,255,255,0.85);max-width:520px;margin:0 auto 2rem;">
+      We invite you to become a monthly supporter and realign your life to be others-oriented.
+    </p>
+    <a href="https://bethanykids.org/donate_us" target="_blank" rel="noopener" class="btn btn-primary">Give Today — US &amp; International</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>window.BKM_PAGE = 'donate'; window.BKM_ROOT = '../';</script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

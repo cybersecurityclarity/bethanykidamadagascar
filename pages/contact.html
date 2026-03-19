@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — BethanyKids Madagascar</title>
+  <meta name="description" content="Contact BethanyKids Madagascar to book an appointment with Dr. Heuric, partner as a hospital, or get involved." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-sidebar { }
+
+    .contact-info-block {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info-block h3 {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      text-decoration: none;
+    }
+
+    .contact-info-item .ci-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .contact-info-item .ci-text {}
+    .contact-info-item .ci-text strong { display: block; color: var(--white); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.15rem; }
+    .contact-info-item .ci-text span  { color: rgba(255,255,255,0.75); font-size: 0.9rem; }
+
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.9rem 1.5rem;
+      background: #25D366;
+      color: var(--white);
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.25s;
+      margin-top: 1rem;
+    }
+
+    .whatsapp-btn:hover { background: #1fba58; color: var(--white); transform: translateY(-2px); }
+
+    .tab-bar {
+      display: flex;
+      border-bottom: 2px solid var(--gray-lt);
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
+      color: var(--gray);
+      transition: all 0.2s;
+      font-family: var(--font-body);
+    }
+
+    .tab-btn.active { color: var(--navy); border-bottom-color: var(--teal); }
+    .tab-btn:hover  { color: var(--navy); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .form-section {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem;
+    }
+
+    .form-section h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .form-section p.sub { color: var(--gray); font-size: 0.92rem; margin-bottom: 1.75rem; }
+
+    .hospital-form-notice {
+      background: rgba(42,125,111,0.07);
+      border: 1.5px solid var(--teal);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      font-size: 0.88rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 800px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<nav class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>›</span>
+  <span>Contact</span>
+</nav>
+
+<section class="page-hero">
+  <h1>Get in Touch</h1>
+  <p>Book an appointment, refer a patient, partner with us as a hospital, or simply ask a question.</p>
+</section>
+
+<!-- QUICK CONTACT METHODS -->
+<section class="section section-alt" style="padding-bottom:2rem;">
+  <div class="container">
+    <div class="contact-methods">
+      <a href="mailto:rakotomalalajeanheuric@gmail.com" class="contact-method">
+        <div class="icon">✉️</div>
+        <h3>Email</h3>
+        <p>rakotomalalajeanheuric@gmail.com</p>
+      </a>
+      <a href="tel:+261346125373" class="contact-method">
+        <div class="icon">📞</div>
+        <h3>Phone</h3>
+        <p>+261 34 612 5373</p>
+      </a>
+      <a href="https://wa.me/261346125373" target="_blank" rel="noopener" class="contact-method">
+        <div class="icon">💬</div>
+        <h3>WhatsApp</h3>
+        <p>+261 34 612 5373</p>
+      </a>
+      <a href="#contact-form" class="contact-method">
+        <div class="icon">📋</div>
+        <h3>Contact Form</h3>
+        <p>Fill out the form below and we'll respond within 48 hours.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTACT SECTION -->
+<section class="section" id="contact-form">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- SIDEBAR -->
+      <div class="contact-sidebar fade-in">
+        <div class="contact-info-block">
+          <h3>Direct Contact</h3>
+          <a class="contact-info-item" href="mailto:rakotomalalajeanheuric@gmail.com">
+            <span class="ci-icon">✉️</span>
+            <div class="ci-text">
+              <strong>Email</strong>
+              <span>rakotomalalajeanheuric@gmail.com</span>
+            </div>
+          </a>
+          <a class="contact-info-item" href="tel:+261346125373">
+            <span class="ci-icon">📞</span>
+            <div class="ci-text">
+              <strong>Phone</strong>
+              <span>+261 34 612 5373</span>
+            </div>
+          </a>
+          <div class="contact-info-item">
+            <span class="ci-icon">🏥</span>
+            <div class="ci-text">
+              <strong>Base Hospital</strong>
+              <span>Manambaro Lutheran Hospital<br>Southeastern Madagascar</span>
+            </div>
+          </div>
+          <a href="https://wa.me/261346125373" target="_blank" rel="noopener" class="whatsapp-btn">
+            <span>💬</span> Chat on WhatsApp
+          </a>
+        </div>
+
+        <div style="background:var(--off-white);border-radius:var(--radius);padding:1.75rem;">
+          <h3 style="font-size:0.92rem;color:var(--navy);margin-bottom:0.75rem;">Response Times</h3>
+          <p style="font-size:0.88rem;color:var(--gray);margin-bottom:0.5rem;">
+            📋 <strong>Contact form:</strong> Within 48 hours
+          </p>
+          <p style="font-size:0.88rem;color:var(--gray);margin-bottom:0.5rem;">
+            📞 <strong>Phone / WhatsApp:</strong> Best during daytime hours (Madagascar time, GMT+3)
+          </p>
+          <p style="font-size:0.88rem;color:var(--gray);">
+            ✉️ <strong>Email:</strong> Within 2–3 business days
+          </p>
+        </div>
+      </div>
+
+      <!-- FORM PANEL -->
+      <div class="fade-in">
+        <!-- TAB BAR -->
+        <div class="tab-bar">
+          <button class="tab-btn active" onclick="switchTab('appointment', this)">Book Appointment</button>
+          <button class="tab-btn" onclick="switchTab('hospital', this)">Hospital Partnership</button>
+          <button class="tab-btn" onclick="switchTab('general', this)">General Inquiry</button>
+        </div>
+
+        <!-- APPOINTMENT FORM -->
+        <div class="tab-panel active" id="tab-appointment">
+          <div class="form-section">
+            <h2>Book an Appointment</h2>
+            <p class="sub">To book a consultation or surgical appointment with Dr. Heuric, please fill in the details below. We'll confirm availability and follow up by phone or email.</p>
+            <form id="appointment-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <!-- Replace YOUR_FORM_ID with actual Formspree ID or your preferred form backend -->
+              <input type="hidden" name="_subject" value="New Appointment Request — BethanyKids Madagascar">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="apt-name">Patient / Guardian Name *</label>
+                  <input type="text" id="apt-name" name="name" required placeholder="Full name">
+                </div>
+                <div class="form-group">
+                  <label for="apt-age">Patient Age *</label>
+                  <input type="text" id="apt-age" name="patient_age" required placeholder="e.g. 3 years">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="apt-email">Email Address *</label>
+                  <input type="email" id="apt-email" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                  <label for="apt-phone">Phone / WhatsApp</label>
+                  <input type="tel" id="apt-phone" name="phone" placeholder="+261 ...">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="apt-location">Location / Region *</label>
+                <input type="text" id="apt-location" name="location" required placeholder="City or region in Madagascar">
+              </div>
+              <div class="form-group">
+                <label for="apt-condition">Condition / Reason for Visit *</label>
+                <textarea id="apt-condition" name="condition" required placeholder="Please describe the child's condition and symptoms. Include any previous diagnoses if available."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="apt-urgency">Urgency</label>
+                <select id="apt-urgency" name="urgency">
+                  <option value="">Select urgency level</option>
+                  <option>Routine — within 1–3 months</option>
+                  <option>Semi-urgent — within 2–4 weeks</option>
+                  <option>Urgent — within 1 week</option>
+                  <option>Emergency — immediate</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-teal" style="width:100%;padding:0.9rem;font-size:1rem;">
+                Submit Appointment Request
+              </button>
+              <p style="font-size:0.78rem;color:var(--gray);margin-top:0.75rem;text-align:center;">
+                For urgent cases, please also call or WhatsApp: <strong>+261 34 612 5373</strong>
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- HOSPITAL PARTNERSHIP FORM -->
+        <div class="tab-panel" id="tab-hospital">
+          <div class="form-section">
+            <h2>Hospital Partnership</h2>
+            <p class="sub">Is your hospital willing to gather pediatric surgical cases for Dr. Heuric to operate? We'd love to discuss a partnership.</p>
+            <div class="hospital-form-notice">
+              💡 <strong>How it works:</strong> Your hospital identifies and gathers children with surgical needs. Dr. Heuric travels to your facility and performs the operations. We coordinate logistics and can help fund surgeries for families who cannot pay.
+            </div>
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <input type="hidden" name="_subject" value="Hospital Partnership Inquiry — BethanyKids Madagascar">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="hosp-name">Contact Person *</label>
+                  <input type="text" id="hosp-name" name="name" required placeholder="Full name">
+                </div>
+                <div class="form-group">
+                  <label for="hosp-title">Title / Role</label>
+                  <input type="text" id="hosp-title" name="title" placeholder="e.g. Medical Director">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="hosp-email">Email Address *</label>
+                  <input type="email" id="hosp-email" name="email" required placeholder="your@hospital.mg">
+                </div>
+                <div class="form-group">
+                  <label for="hosp-phone">Phone / WhatsApp</label>
+                  <input type="tel" id="hosp-phone" name="phone" placeholder="+261 ...">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="hosp-hospital">Hospital Name &amp; Location *</label>
+                <input type="text" id="hosp-hospital" name="hospital" required placeholder="Hospital name and city/region">
+              </div>
+              <div class="form-group">
+                <label for="hosp-capacity">Approximate No. of Surgical Cases You Could Gather</label>
+                <select id="hosp-capacity" name="capacity">
+                  <option value="">Select estimate</option>
+                  <option>1–5 cases per visit</option>
+                  <option>5–15 cases per visit</option>
+                  <option>15–30 cases per visit</option>
+                  <option>30+ cases per visit</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="hosp-message">Tell us about your hospital and the need you see *</label>
+                <textarea id="hosp-message" name="message" required placeholder="Describe your hospital, the region you serve, the surgical conditions you commonly see, and any questions you have about partnership."></textarea>
+              </div>
+              <button type="submit" class="btn btn-teal" style="width:100%;padding:0.9rem;font-size:1rem;">
+                Submit Partnership Inquiry
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- GENERAL CONTACT FORM -->
+        <div class="tab-panel" id="tab-general">
+          <div class="form-section">
+            <h2>General Inquiry</h2>
+            <p class="sub">Have a question about BethanyKids Madagascar, volunteering, donating, or anything else? We'd love to hear from you.</p>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <input type="hidden" name="_subject" value="General Inquiry — BethanyKids Madagascar">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gen-name">Your Name *</label>
+                  <input type="text" id="gen-name" name="name" required placeholder="Full name">
+                </div>
+                <div class="form-group">
+                  <label for="gen-email">Email Address *</label>
+                  <input type="email" id="gen-email" name="email" required placeholder="your@email.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="gen-subject">Subject *</label>
+                <select id="gen-subject" name="subject" required>
+                  <option value="">Select a topic</option>
+                  <option>Donating / Fundraising</option>
+                  <option>Volunteering / Medical Exchange</option>
+                  <option>Media / Press Inquiry</option>
+                  <option>Church Partnership</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="gen-message">Message *</label>
+                <textarea id="gen-message" name="message" required placeholder="How can we help you?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-teal" style="width:100%;padding:0.9rem;font-size:1rem;">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER CTA -->
+<section class="section section-alt">
+  <div class="container text-center">
+    <p class="section-label">Medical Volunteers</p>
+    <h2 class="section-title">Are You a Medical Professional?</h2>
+    <p style="color:var(--gray);max-width:580px;margin:0 auto 2rem;">
+      BethanyKids Madagascar welcomes medical professionals who wish to volunteer, conduct a medical exchange, or support surgical outreach. Students, residents, and attending physicians are all welcome to apply.
+    </p>
+    <a href="mailto:rakotomalalajeanheuric@gmail.com?subject=Volunteer%20Inquiry" class="btn btn-navy">Email Us to Volunteer</a>
+    <a href="https://wa.me/261346125373?text=I'm%20interested%20in%20volunteering%20with%20BethanyKids%20Madagascar" target="_blank" rel="noopener" class="btn btn-teal" style="margin-left:0.75rem;">WhatsApp Us</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>
+  function switchTab(panel, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + panel).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+<script>window.BKM_PAGE = 'contact'; window.BKM_ROOT = '../';</script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
