@@ -122,28 +122,32 @@
   <a href="pages/doctor.html">Meet the surgeon making a difference →</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
+<!-- HERO + STAT SIDE BY SIDE -->
+<section class="hero" style="min-height:unset;">
   <div class="hero-bg"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Bethany Kids Madagascar</p>
-    <h1>
-      <span data-i18n="hero_h1_a">Healing Children.</span><br>
-      <em data-i18n="hero_h1_b">Transforming Lives.</em>
-    </h1>
-    <p data-i18n="hero_p">
-      Bringing world-class pediatric surgery to the children of Madagascar who need it most.
-    </p>
-    <a href="pages/donate.html" class="btn btn-primary" data-i18n="btn_sponsor">Sponsor a Surgery</a>
-    <a href="pages/about.html"  class="btn btn-outline"  data-i18n="btn_learn">Learn More</a>
+  <div style="position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1fr auto;align-items:stretch;">
+    <!-- Hero text -->
+    <div class="hero-content" style="padding:3.5rem 2rem 3.5rem 6vw;">
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">Bethany Kids Madagascar</p>
+      <h1>
+        <span data-i18n="hero_h1_a">Healing Children.</span><br>
+        <em data-i18n="hero_h1_b">Transforming Lives.</em>
+      </h1>
+      <p data-i18n="hero_p">
+        Bringing world-class pediatric surgery to the children of Madagascar who need it most.
+      </p>
+      <a href="pages/donate.html" class="btn btn-primary" data-i18n="btn_sponsor">Sponsor a Surgery</a>
+      <a href="pages/about.html"  class="btn btn-outline"  data-i18n="btn_learn">Learn More</a>
+    </div>
+    <!-- 1 in 3M stat panel -->
+    <div style="background:rgba(0,0,0,0.25);backdrop-filter:blur(2px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 3.5rem;text-align:center;min-width:280px;border-left:1px solid rgba(255,255,255,0.1);">
+      <div style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;color:var(--gold);line-height:1;margin-bottom:0.5rem;">1 in 3M</div>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.8);max-width:220px;line-height:1.5;margin-bottom:0.5rem;">
+        Only <strong>one pediatric surgeon</strong> per 3 million children on average across Sub-Saharan Africa.
+      </p>
+      <p style="font-size:0.7rem;color:rgba(255,255,255,0.4);font-style:italic;">Anesthesiology, 2020</p>
+    </div>
   </div>
-</section>
-
-<!-- THE ISSUE -->
-<section class="issue-callout">
-  <p class="big-stat">1 in 3M</p>
-  <p>There is only <strong>one pediatric surgeon per 3 million children</strong> on average across Sub-Saharan Africa. In Madagascar, only 5 pediatric surgeons serve 22 million people.</p>
-  <p class="source">Source: PAACS Alumni Newsletter, 2016 &amp; Pediatric Perioperative Mortality in Kenya, Anesthesiology 2020</p>
 </section>
 
 <!-- STATS -->
@@ -180,8 +184,7 @@
   <div class="container">
     <div class="split">
       <div class="split-img fade-in">
-        <!-- Replace with actual photo -->
-        <div class="img-placeholder">[ Photo of Dr. Heuric ]</div>
+        <img src="assets/img/Dr. Heuric for BK Madagascar.png" alt="Dr. Heuric Rakotomalala" style="width:100%;height:420px;object-fit:cover;border-radius:var(--radius);" onerror="this.outerHTML='<div class=\'img-placeholder\'>[ Photo of Dr. Heuric ]</div>'">
       </div>
       <div class="fade-in">
         <p class="section-label">Meet the Surgeon</p>
@@ -197,61 +200,6 @@
           <cite>— Rita Gilmour Power, nominator</cite>
         </div>
         <a href="pages/doctor.html" class="btn btn-teal mt-2">Read His Full Story</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section how-section">
-  <div class="container">
-    <p class="section-label text-center">Our Model</p>
-    <h2 class="section-title text-center">How We Reach Children</h2>
-    <p class="section-intro text-center" style="margin-left:auto;margin-right:auto;">
-      Dr. Heuric travels to partner hospitals across Madagascar, operating on children who could not otherwise access surgery.
-    </p>
-    <div class="steps fade-in">
-      <div class="step">
-        <h3>Hospital Partners Gather Cases</h3>
-        <p>Partner hospitals identify children with surgical needs and schedule a visit from Dr. Heuric's team.</p>
-      </div>
-      <div class="step">
-        <h3>Dr. Heuric Travels to You</h3>
-        <p>Dr. Heuric and his team travel to the hospital — bringing expertise directly to the patient, removing access barriers.</p>
-      </div>
-      <div class="step">
-        <h3>Surgery Is Performed</h3>
-        <p>Children receive life-changing operations including cleft lip repair, spina bifida correction, VP shunts, and general pediatric surgery.</p>
-      </div>
-      <div class="step">
-        <h3>Donors Fund the Mission</h3>
-        <p>Donations cover travel, surgical supplies, and follow-up care — making each surgery possible for families who cannot pay.</p>
-      </div>
-    </div>
-    <div class="text-center mt-3">
-      <a href="pages/contact.html" class="btn btn-navy">Partner With Us as a Hospital</a>
-      <a href="pages/donate.html" class="btn btn-primary" style="margin-left:0.75rem;">Fund a Surgery</a>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section section-navy">
-  <div class="container">
-    <p class="section-label">Why It Matters</p>
-    <h2 class="section-title" style="color:var(--white);">Voices from the Mission</h2>
-    <div class="testimonial-row fade-in">
-      <div class="testimonial-card">
-        <blockquote>"I decide to come back to my home country because there is a terrible lack of pediatric surgeons. There are only 5 pediatric surgeons for 22 million inhabitants."</blockquote>
-        <cite>— Dr. Heuric Rakotomalala</cite>
-      </div>
-      <div class="testimonial-card">
-        <blockquote>"PAACS prepared me to live a daily life honoring God — performing high quality surgery, handling difficult situations with learned skills, and having the Great Healer beside me."</blockquote>
-        <cite>— Dr. Heuric Rakotomalala</cite>
-      </div>
-      <div class="testimonial-card">
-        <blockquote>"This gentle doctor is the epitome of what everyone expects in a great doctor."</blockquote>
-        <cite>— Rita Gilmour Power</cite>
       </div>
     </div>
   </div>
