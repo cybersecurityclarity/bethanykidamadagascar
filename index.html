@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BethanyKids Madagascar — Pediatric Surgery, Hope & Healing</title>
+  <meta name="description" content="BethanyKids Madagascar brings world-class pediatric surgical care to children across Madagascar through Dr. Heuric Rakotomalala, one of the country's leading pediatric surgeons." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Homepage-specific */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+    .mission-strip {
+      background: var(--teal);
+      color: var(--white);
+      text-align: center;
+      padding: 1.1rem 2rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .mission-strip a { color: var(--gold); }
+
+    .issue-callout {
+      background: var(--navy);
+      color: var(--white);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .issue-callout .big-stat {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .issue-callout p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 600px;
+      margin: 0 auto 0.5rem;
+    }
+
+    .issue-callout .source {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      font-style: italic;
+    }
+
+    .how-section { background: var(--off-white); }
+
+    .testimonial-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .testimonial-card blockquote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .testimonial-card cite {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-style: normal;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .cta-banner p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV PLACEHOLDER (filled by components.js) -->
+<div id="site-nav"></div>
+
+<!-- MISSION STRIP -->
+<div class="mission-strip">
+  Madagascar has only 5 pediatric surgeons for 22 million people. 
+  <a href="pages/doctor.html">Meet the surgeon making a difference →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Bethany Kids Madagascar</p>
+    <h1>
+      <span data-i18n="hero_h1_a">Healing Children.</span><br>
+      <em data-i18n="hero_h1_b">Transforming Lives.</em>
+    </h1>
+    <p data-i18n="hero_p">
+      Bringing world-class pediatric surgery to the children of Madagascar who need it most.
+    </p>
+    <a href="pages/donate.html" class="btn btn-primary" data-i18n="btn_sponsor">Sponsor a Surgery</a>
+    <a href="pages/about.html"  class="btn btn-outline"  data-i18n="btn_learn">Learn More</a>
+  </div>
+</section>
+
+<!-- THE ISSUE -->
+<section class="issue-callout">
+  <p class="big-stat">1 in 3M</p>
+  <p>There is only <strong>one pediatric surgeon per 3 million children</strong> on average across Sub-Saharan Africa. In Madagascar, only 5 pediatric surgeons serve 22 million people.</p>
+  <p class="source">Source: PAACS Alumni Newsletter, 2016 &amp; Pediatric Perioperative Mortality in Kenya, Anesthesiology 2020</p>
+</section>
+
+<!-- STATS -->
+<section class="section section-alt">
+  <div class="container text-center">
+    <p class="section-label">By the Numbers</p>
+    <h2 class="section-title">Our Impact in Madagascar</h2>
+    <div class="stats-grid fade-in">
+      <div class="stat-card">
+        <div class="stat-number" data-val="0" data-i18n="stat1_num">[PLACEHOLDER]</div>
+        <div class="stat-label" data-i18n="stat1_lbl">Surgeries Performed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-val="0" data-i18n="stat2_num">[PLACEHOLDER]</div>
+        <div class="stat-label" data-i18n="stat2_lbl">Hospitals Served</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">20+</div>
+        <div class="stat-label" data-i18n="stat3_lbl">Years of Service</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-val="0" data-i18n="stat4_num">[PLACEHOLDER]</div>
+        <div class="stat-label" data-i18n="stat4_lbl">Children Helped</div>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--gray);">
+      * Statistics to be updated by Dr. Heuric's team. Placeholders shown.
+    </p>
+  </div>
+</section>
+
+<!-- MEET DR. HEURIC -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="split-img fade-in">
+        <!-- Replace with actual photo -->
+        <div class="img-placeholder">[ Photo of Dr. Heuric ]</div>
+      </div>
+      <div class="fade-in">
+        <p class="section-label">Meet the Surgeon</p>
+        <h2 class="section-title">Dr. Heuric Rakotomalala</h2>
+        <p style="color:var(--gray);margin-bottom:1rem;">
+          One of Madagascar's most skilled pediatric and general surgeons, Dr. Heuric has dedicated his career to serving children on the margins — traveling to hospitals across the country to bring surgical care where it is desperately needed.
+        </p>
+        <p style="color:var(--gray);margin-bottom:1.5rem;">
+          Trained through <strong>PAACS</strong> (Pan African Academy of Christian Surgeons) and holding a pediatric surgery fellowship from BethanyKids at Kijabe Hospital, Kenya, he now serves as Medical Director at Manambaro Lutheran Hospital in southeastern Madagascar.
+        </p>
+        <div class="quote-block">
+          <blockquote>"This gentle doctor is the epitome of what everyone expects in a great doctor."</blockquote>
+          <cite>— Rita Gilmour Power, nominator</cite>
+        </div>
+        <a href="pages/doctor.html" class="btn btn-teal mt-2">Read His Full Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-section">
+  <div class="container">
+    <p class="section-label text-center">Our Model</p>
+    <h2 class="section-title text-center">How We Reach Children</h2>
+    <p class="section-intro text-center" style="margin-left:auto;margin-right:auto;">
+      Dr. Heuric travels to partner hospitals across Madagascar, operating on children who could not otherwise access surgery.
+    </p>
+    <div class="steps fade-in">
+      <div class="step">
+        <h3>Hospital Partners Gather Cases</h3>
+        <p>Partner hospitals identify children with surgical needs and schedule a visit from Dr. Heuric's team.</p>
+      </div>
+      <div class="step">
+        <h3>Dr. Heuric Travels to You</h3>
+        <p>Dr. Heuric and his team travel to the hospital — bringing expertise directly to the patient, removing access barriers.</p>
+      </div>
+      <div class="step">
+        <h3>Surgery Is Performed</h3>
+        <p>Children receive life-changing operations including cleft lip repair, spina bifida correction, VP shunts, and general pediatric surgery.</p>
+      </div>
+      <div class="step">
+        <h3>Donors Fund the Mission</h3>
+        <p>Donations cover travel, surgical supplies, and follow-up care — making each surgery possible for families who cannot pay.</p>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <a href="pages/contact.html" class="btn btn-navy">Partner With Us as a Hospital</a>
+      <a href="pages/donate.html" class="btn btn-primary" style="margin-left:0.75rem;">Fund a Surgery</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-navy">
+  <div class="container">
+    <p class="section-label">Why It Matters</p>
+    <h2 class="section-title" style="color:var(--white);">Voices from the Mission</h2>
+    <div class="testimonial-row fade-in">
+      <div class="testimonial-card">
+        <blockquote>"I decide to come back to my home country because there is a terrible lack of pediatric surgeons. There are only 5 pediatric surgeons for 22 million inhabitants."</blockquote>
+        <cite>— Dr. Heuric Rakotomalala</cite>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"PAACS prepared me to live a daily life honoring God — performing high quality surgery, handling difficult situations with learned skills, and having the Great Healer beside me."</blockquote>
+        <cite>— Dr. Heuric Rakotomalala</cite>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"This gentle doctor is the epitome of what everyone expects in a great doctor."</blockquote>
+        <cite>— Rita Gilmour Power</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <h2>A Child Is Waiting for Surgery.<br><em style="color:var(--gold);">Will You Help?</em></h2>
+  <p>Every donation funds a surgery that transforms a child's life — and often saves it. Join us in bringing healing to Madagascar.</p>
+  <a href="pages/donate.html" class="btn btn-primary">Donate Today</a>
+  <a href="pages/contact.html" class="btn btn-outline" style="margin-left:0.75rem;">Book an Appointment</a>
+</section>
+
+<!-- FOOTER PLACEHOLDER -->
+<div id="site-footer"></div>
+
+<script>window.BKM_PAGE = 'home'; window.BKM_ROOT = './';</script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
